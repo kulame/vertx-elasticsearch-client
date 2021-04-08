@@ -9,7 +9,7 @@ public class ElasticsearchOptions {
     private List<String> endpoints;
 
     private void init(){
-        this.endpoints = ArrayList<>();
+        this.endpoints = new ArrayList<>();
     }
 
     public ElasticsearchOptions(){
@@ -17,6 +17,12 @@ public class ElasticsearchOptions {
     }
 
     public ElasticsearchOptions addConnectionString(String connectionString){
+        this.endpoints.add(connectionString);
+        return this;
+    }
+
+    public ElasticsearchOptions setConnectionString(String connectionString){
+        this.endpoints.clear();
         this.endpoints.add(connectionString);
         return this;
     }

@@ -12,10 +12,6 @@ public final class ElasticsearchURI {
 
   private static final int DEFAULT_PORT = 9200;
   private final String connectionString;
-  private final SocketAddress socketAddress;
-  private final String user;
-  private final String password;
-  private final Map<String,String> params;
   
   
   public ElasticsearchURI(String connectionString){
