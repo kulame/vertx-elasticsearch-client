@@ -1,0 +1,1 @@
+# vertx-elasticsearch-client
