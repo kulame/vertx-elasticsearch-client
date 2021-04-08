@@ -1,4 +1,6 @@
 package io.vertx.elasticsearch.client;
+import io.vertx.codegen.annotations.VertxGen;
 
-public class Response {
+@VertxGen
+public interface Response extends Iterable<Response>{
 }
