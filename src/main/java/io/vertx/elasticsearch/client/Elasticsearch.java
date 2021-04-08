@@ -9,4 +9,11 @@ import io.vertx.core.Vertx;
 public interface Elasticsearch {
  // static Elasticsearch createClient(Vertx vertx){
   //}
+  static Elasticsearch createClient(Vertx vertx){
+    return createClient(vertx, new ElasticsearchOptions());
+  }
+
+  static Elasticsearch createClient(Vertx vertx, String connectionString){
+    
+  }
 }
