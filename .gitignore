@@ -1,6 +1,9 @@
 ### Vert.x ###
 .vertx/
 .idea/
+.vscode/
+.project
+.classpath
 .mvn/
 ### Eclipse ###
 
