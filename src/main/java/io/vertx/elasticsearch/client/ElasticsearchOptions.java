@@ -7,9 +7,11 @@ import java.util.List;
 import java.util.ArrayList;
 public class ElasticsearchOptions {
     private List<String> endpoints;
+    private int maxWaitingHandlers;
 
     private void init(){
         this.endpoints = new ArrayList<>();
+        this.maxWaitingHandlers = 2048;
     }
 
     public ElasticsearchOptions(){
@@ -25,5 +27,9 @@ public class ElasticsearchOptions {
         this.endpoints.clear();
         this.endpoints.add(connectionString);
         return this;
+    }
+
+    public int getMaxWaitingHandlers(){
+        return this.maxWaitingHandlers;
     }
 }

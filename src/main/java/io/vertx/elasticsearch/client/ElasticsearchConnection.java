@@ -9,7 +9,7 @@ import io.vertx.core.Handler;
 
 @VertxGen
 public interface ElasticsearchConnection extends ReadStream<Response>{
-   
+
     /**
     * {@inheritDoc}
     */
@@ -38,6 +38,8 @@ public interface ElasticsearchConnection extends ReadStream<Response>{
     @Fluent
     @Override
     ElasticsearchConnection endHandler(@Nullable Handler<Void> endHandler);
+
+    void close();
 
 
 }
