@@ -5,7 +5,8 @@ import io.vertx.codegen.annotations.Nullable;
 import io.vertx.codegen.annotations.VertxGen;
 import io.vertx.core.streams.ReadStream;
 import io.vertx.core.Handler;
-
+import io.vertx.core.Future;
+import io.vertx.core.AsyncResult;
 
 @VertxGen
 public interface ElasticsearchConnection extends ReadStream<Response>{
@@ -39,7 +40,15 @@ public interface ElasticsearchConnection extends ReadStream<Response>{
     @Override
     ElasticsearchConnection endHandler(@Nullable Handler<Void> endHandler);
 
+    @Fluent
+    default ElasticsearchConnection send(Request command, Handler<AsyncResult<@Nullable Response>> onSend){
+        send(command).onComplete(onSend);
+        return this;
+    }
+
+    Future<@Nullable Response> send(Request command);
+
     void close();
 
-
+    boolean pendingQueueFull();
 }
