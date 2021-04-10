@@ -2,6 +2,10 @@
 
 The Vert.x Elasticsearch client provides an asynchronous API to interact with a [Elasticsearch](https://www.elastic.co/)
 
+## Note 
+
+This project should be considered as an "alpha" release. It is substantially API complete, but there are still some areas that need more work. do not used it on production environment.
+
 # Building
 
 To launch your tests:
